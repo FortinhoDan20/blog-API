@@ -84,11 +84,7 @@ exports.getAllPosts = async (req, res) => {
       } else {
         posts = await Post.find()
       }
-      res.status(200).json({
-        state: true,
-        message:"list of posts",
-        data: posts
-      })
+      res.status(200).json(posts)
     } catch (err) {
       res.status(500).json(err)
     }
